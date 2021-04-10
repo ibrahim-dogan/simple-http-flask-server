@@ -11,6 +11,13 @@ def query_example():
     return word[::-1]
 
 
+@app.route('/calculate', methods=['GET'])
+def calculate():
+    a = int(request.args.get('a'))
+    b = int(request.args.get('b'))
+    return str(a + b)
+
+
 if __name__ == '__main__':
     # run app in debug mode on port 5000
     app.run(debug=True, port=5000)
